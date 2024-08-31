@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Panel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="container">
+        <h1>Game Feature Panel</h1>
+        <div class="status">
+            <p>Auto Headshot: <span id="auto_headshot">{{ 'Enabled' if auto_headshot else 'Disabled' }}</span></p>
+            <p>Speed Increase: <span id="speed_increase">{{ 'Enabled' if speed_increase else 'Disabled' }}</span></p>
+            <p>Invisible Avatar: <span id="invisible_avatar">{{ 'Enabled' if invisible_avatar else 'Disabled' }}</span></p>
+        </div>
+        <form action="/toggle" method="post">
+            <button type="submit" name="feature" value="auto_headshot" class="toggle-button">Toggle Auto Headshot</button>
+            <button type="submit" name="feature" value="speed_increase" class="toggle-button">Toggle Speed Increase</button>
+            <button type="submit" name="feature" value="invisible_avatar" class="toggle-button">Toggle Invisible Avatar</button>
+        </form>
+    </div>
+</body>
+</html>
